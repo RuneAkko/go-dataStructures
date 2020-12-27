@@ -2,7 +2,7 @@ package queue
 
 // Queue 利用数组实现基本的FIFO队列（环形队列）
 type Queue struct {
-	maxSize int   //队列数字长度
+	maxSize int   //数组长度
 	Q       []int 
 	head    int
 	tail    int
