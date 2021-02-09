@@ -45,7 +45,6 @@ func quickSort(a []int, head, tail int) {
 	quickSort(a, pivot+1, tail)
 }
 
-// 尾元素基准
 func partition(a []int, head, tail, Flag int) int {
 	switch Flag {
 	case 0:
