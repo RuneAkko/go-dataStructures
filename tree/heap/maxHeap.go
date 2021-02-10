@@ -72,6 +72,7 @@ func BuildheapWithUp2Down(arr []int) *Heap {
 func heapify(h *Heap, start int) {
 	for i := start; start*2 <= h.n; {
 		if 2*i+1 <= h.n && h.arr[2*i+1] > h.arr[2*i] {
+			//TODO wrong
 			h.arr[i], h.arr[2*i+1] = h.arr[2*i+1], h.arr[i]
 		} else {
 			h.arr[i], h.arr[2*i] = h.arr[2*i], h.arr[i]
@@ -119,11 +120,19 @@ func (h *Heap) popTop() (int, error) {
 	for i := 1; 2*i <= h.n; {
 		max := h.arr[2*i]
 		if 2*i+1 <= h.n && h.arr[2*i+1] > max {
-			h.arr[i], h.arr[2*i+1] = h.arr[2*i+1], h.arr[i]
-			i = 2*i + 1
+			if h.arr[i] < h.arr[2*i+1] {
+				h.arr[i], h.arr[2*i+1] = h.arr[2*i+1], h.arr[i]
+				i = 2*i + 1
+			} else {
+				break
+			}
 		} else {
-			h.arr[i], h.arr[2*i] = h.arr[2*i], h.arr[i]
-			i = 2 * i
+			if h.arr[i] < h.arr[2*i] {
+				h.arr[i], h.arr[2*i] = h.arr[2*i], h.arr[i]
+				i = 2 * i
+			} else {
+				break
+			}
 		}
 	}
 	return ele, nil
