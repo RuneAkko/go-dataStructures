@@ -14,7 +14,7 @@ const (
 	TailPivot = 0
 	HeadPivot = 1
 	RandPivot = 2
-	Size      = 20
+	Size      = 1
 	NumRange  = 100
 )
 
