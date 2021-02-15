@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
-	"time"
 )
 
 /**
@@ -14,35 +12,18 @@ const (
 	TailPivot = 0
 	HeadPivot = 1
 	RandPivot = 2
-	Size      = 1
-	NumRange  = 100
 )
 
-func main() {
-
-	testArray := make([]int, Size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < Size; i++ {
-		testArray[i] = rand.Intn(NumRange)
-	}
-	if len(testArray) <= 1 {
-		return
-	}
-	fmt.Println(testArray)
-	quickSort(testArray, 0, len(testArray)-1)
-	fmt.Println(testArray)
-
-}
-
-func quickSort(a []int, head, tail int) {
+// QuickSort is
+func QuickSort(a []int, head, tail int) {
 	if head >= tail {
 		return
 	}
 	// pivot := partition(a, head, tail, TailPivot)
 	// pivot := partition(a, head, tail, HeadPivot)
 	pivot := partition(a, head, tail, RandPivot)
-	quickSort(a, head, pivot-1)
-	quickSort(a, pivot+1, tail)
+	QuickSort(a, head, pivot-1)
+	QuickSort(a, pivot+1, tail)
 }
 
 func partition(a []int, head, tail, Flag int) int {
