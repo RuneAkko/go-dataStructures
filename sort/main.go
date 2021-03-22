@@ -28,8 +28,11 @@ func main() {
 	// Test QuickSort Success
 	// QuickSort(testArray, 0, len(testArray)-1)
 
+	// Test QuickSort Iteration Version
+	QuickSortIteration(testArray)
+
 	// Test MergeSort Success
-	MergeSort(testArray, 0, len(testArray)-1)
+	// MergeSort(testArray, 0, len(testArray)-1)
 
 	// Test BubbleSort Success
 	// BubbleSort(testArray)

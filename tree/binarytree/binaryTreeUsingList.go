@@ -67,3 +67,5 @@ func (n *Node) postOrder() {
 		fmt.Println(n.val)
 	}
 }
+
+// 层次遍历

@@ -19,7 +19,7 @@ func MergeSort(arr []int, l, r int) {
 	m := (l + r) / 2
 	MergeSort(arr, l, m)
 	MergeSort(arr, m+1, r)
-	// merge(arr, l, m, m+1, r)
+	merge(arr, l, m, m+1, r)
 	mergeWithSentail(arr, l, m, m+1, r)
 }
 
